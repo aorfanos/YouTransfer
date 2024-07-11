@@ -7,6 +7,7 @@ VOLUME /opt/youtransfer/config
 VOLUME /opt/youtransfer/uploads
 
 WORKDIR /opt/youtransfer/
+RUN apt-get install g++ build-essential
 RUN npm install youtransfer -g
 RUN youtransfer init
 RUN npm install
