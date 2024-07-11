@@ -21,13 +21,13 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Docker image
-        run: docker build -t ghcr.io/${{ github.repository }}/app:${{ github.ref_name }} -t ghcr.io/${{ github.repository }}/app:latest .
+        run: docker build -t ghcr.io/aorfanos/youtransfer:${{ github.ref_name }} -t ghcr.io/aorfanos/youtransfer:latest .
 
       - name: Push Docker image to GitHub Container Registry
-        run: docker push ghcr.io/${{ github.repository }}/app --all-tags
+        run: docker push ghcr.io/aorfanos/youtransfer --all-tags
 
       - name: Cleanup
         run: |
-          docker image rm ghcr.io/${{ github.repository }}/app:${{ github.ref_name }} ghcr.io/${{ github.repository }}/app:latest
+          docker image rm ghcr.io/aorfanos/youtransfer:${{ github.ref_name }} ghcr.io/aorfanos/youtransfer:latest
           docker logout ghcr.io
   
