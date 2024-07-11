@@ -1,4 +1,4 @@
-FROM node:6.2.0
+FROM node:20.12.2
 
 MAINTAINER YouTransfer.io (info@youtransfer.io)
 LABEL version="1.0.6"
